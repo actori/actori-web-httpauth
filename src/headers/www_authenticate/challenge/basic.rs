@@ -5,7 +5,7 @@ use std::default::Default;
 use std::fmt;
 use std::str;
 
-use actix_web::http::header::{
+use actori_web::http::header::{
     HeaderValue, IntoHeaderValue, InvalidHeaderValue,
 };
 use bytes::{BufMut, Bytes, BytesMut};
@@ -19,9 +19,9 @@ use crate::utils;
 /// ## Example
 ///
 /// ```
-/// # use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer};
-/// use actix_web_httpauth::headers::www_authenticate::basic::Basic;
-/// use actix_web_httpauth::headers::www_authenticate::WwwAuthenticate;
+/// # use actori_web::{web, App, HttpRequest, HttpResponse, HttpServer};
+/// use actori_web_httpauth::headers::www_authenticate::basic::Basic;
+/// use actori_web_httpauth::headers::www_authenticate::WwwAuthenticate;
 ///
 /// fn index(_req: HttpRequest) -> HttpResponse {
 ///     let challenge = Basic::with_realm("Restricted area");
@@ -45,7 +45,7 @@ impl Basic {
     /// ## Example
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::www_authenticate::basic::Basic;
+    /// # use actori_web_httpauth::headers::www_authenticate::basic::Basic;
     /// let challenge = Basic::new();
     /// ```
     pub fn new() -> Basic {
@@ -57,12 +57,12 @@ impl Basic {
     /// ## Examples
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::www_authenticate::basic::Basic;
+    /// # use actori_web_httpauth::headers::www_authenticate::basic::Basic;
     /// let challenge = Basic::with_realm("Restricted area");
     /// ```
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::www_authenticate::basic::Basic;
+    /// # use actori_web_httpauth::headers::www_authenticate::basic::Basic;
     /// let my_realm = "Earth realm".to_string();
     /// let challenge = Basic::with_realm(my_realm);
     /// ```
@@ -116,7 +116,7 @@ impl IntoHeaderValue for Basic {
 #[cfg(test)]
 mod tests {
     use super::Basic;
-    use actix_web::http::header::IntoHeaderValue;
+    use actori_web::http::header::IntoHeaderValue;
 
     #[test]
     fn test_plain_into_header_value() {

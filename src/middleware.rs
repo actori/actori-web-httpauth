@@ -4,9 +4,9 @@ use std::marker::PhantomData;
 use std::pin::Pin;
 use std::sync::Arc;
 
-use actix_service::{Service, Transform};
-use actix_web::dev::{ServiceRequest, ServiceResponse};
-use actix_web::Error;
+use actori_service::{Service, Transform};
+use actori_web::dev::{ServiceRequest, ServiceResponse};
+use actori_web::Error;
 use futures::future::{self, Future, FutureExt, LocalBoxFuture, TryFutureExt};
 use futures::lock::Mutex;
 use futures::task::{Context, Poll};
@@ -60,10 +60,10 @@ where
     /// ## Example
     ///
     /// ```
-    /// # use actix_web::Error;
-    /// # use actix_web::dev::ServiceRequest;
-    /// # use actix_web_httpauth::middleware::HttpAuthentication;
-    /// # use actix_web_httpauth::extractors::basic::BasicAuth;
+    /// # use actori_web::Error;
+    /// # use actori_web::dev::ServiceRequest;
+    /// # use actori_web_httpauth::middleware::HttpAuthentication;
+    /// # use actori_web_httpauth::extractors::basic::BasicAuth;
     /// // In this example validator returns immediately,
     /// // but since it is required to return anything
     /// // that implements `IntoFuture` trait,
@@ -95,11 +95,11 @@ where
     /// ## Example
     ///
     /// ```
-    /// # use actix_web::Error;
-    /// # use actix_web::dev::ServiceRequest;
-    /// # use actix_web_httpauth::middleware::HttpAuthentication;
-    /// # use actix_web_httpauth::extractors::bearer::{Config, BearerAuth};
-    /// # use actix_web_httpauth::extractors::{AuthenticationError, AuthExtractorConfig};
+    /// # use actori_web::Error;
+    /// # use actori_web::dev::ServiceRequest;
+    /// # use actori_web_httpauth::middleware::HttpAuthentication;
+    /// # use actori_web_httpauth::extractors::bearer::{Config, BearerAuth};
+    /// # use actori_web_httpauth::extractors::{AuthenticationError, AuthExtractorConfig};
     /// async fn validator(req: ServiceRequest, credentials: BearerAuth) -> Result<ServiceRequest, Error> {
     ///     if credentials.token() == "mF_9.B5f-4.1JqM" {
     ///         Ok(req)

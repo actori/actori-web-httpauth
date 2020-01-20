@@ -1,6 +1,6 @@
 use std::fmt::{Debug, Display};
 
-use actix_web::http::header::IntoHeaderValue;
+use actori_web::http::header::IntoHeaderValue;
 use bytes::Bytes;
 
 pub mod basic;

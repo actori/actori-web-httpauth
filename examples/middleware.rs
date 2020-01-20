@@ -1,8 +1,8 @@
-use actix_web::dev::ServiceRequest;
-use actix_web::{middleware, web, App, Error, HttpServer};
+use actori_web::dev::ServiceRequest;
+use actori_web::{middleware, web, App, Error, HttpServer};
 
-use actix_web_httpauth::extractors::basic::BasicAuth;
-use actix_web_httpauth::middleware::HttpAuthentication;
+use actori_web_httpauth::extractors::basic::BasicAuth;
+use actori_web_httpauth::middleware::HttpAuthentication;
 
 async fn validator(
     req: ServiceRequest,
@@ -11,7 +11,7 @@ async fn validator(
     Ok(req)
 }
 
-#[actix_rt::main]
+#[actori_rt::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         let auth = HttpAuthentication::basic(validator);

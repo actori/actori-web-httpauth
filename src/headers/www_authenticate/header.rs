@@ -1,8 +1,8 @@
-use actix_web::error::ParseError;
-use actix_web::http::header::{
+use actori_web::error::ParseError;
+use actori_web::http::header::{
     Header, HeaderName, HeaderValue, IntoHeaderValue, WWW_AUTHENTICATE,
 };
-use actix_web::HttpMessage;
+use actori_web::HttpMessage;
 
 use super::Challenge;
 

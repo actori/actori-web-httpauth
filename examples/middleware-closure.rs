@@ -1,8 +1,8 @@
-use actix_web::{middleware, web, App, HttpServer};
+use actori_web::{middleware, web, App, HttpServer};
 
-use actix_web_httpauth::middleware::HttpAuthentication;
+use actori_web_httpauth::middleware::HttpAuthentication;
 
-#[actix_rt::main]
+#[actori_rt::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         let auth =

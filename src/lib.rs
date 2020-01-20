@@ -1,4 +1,4 @@
-//! HTTP Authorization support for [actix-web](https://actix.rs) framework.
+//! HTTP Authorization support for [actori-web](https://actori.rs) framework.
 //!
 //! Provides:
 //!  * typed [Authorization] and  [WWW-Authenticate] headers
@@ -12,7 +12,7 @@
 //!
 //! [Authorization]: `crate::headers::authorization::Authorization`
 //! [WWW-Authenticate]: `crate::headers::www_authenticate::WwwAuthenticate`
-//! [extractors]: https://actix.rs/docs/extractors/
+//! [extractors]: https://actori.rs/docs/extractors/
 //! [middleware]: ./middleware/
 
 #![deny(bare_trait_objects)]

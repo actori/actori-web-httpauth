@@ -2,9 +2,9 @@
 
 use std::borrow::Cow;
 
-use actix_web::dev::{Payload, ServiceRequest};
-use actix_web::http::header::Header;
-use actix_web::{FromRequest, HttpRequest};
+use actori_web::dev::{Payload, ServiceRequest};
+use actori_web::http::header::Header;
+use actori_web::{FromRequest, HttpRequest};
 use futures::future;
 
 use super::config::AuthExtractorConfig;
@@ -57,8 +57,8 @@ impl AuthExtractorConfig for Config {
 /// # Example
 ///
 /// ```
-/// use actix_web::Result;
-/// use actix_web_httpauth::extractors::basic::BasicAuth;
+/// use actori_web::Result;
+/// use actori_web_httpauth::extractors::basic::BasicAuth;
 ///
 /// async fn index(auth: BasicAuth) -> String {
 ///     format!("Hello, {}!", auth.user_id())
@@ -72,8 +72,8 @@ impl AuthExtractorConfig for Config {
 /// ## Example
 ///
 /// ```
-/// use actix_web::{web, App};
-/// use actix_web_httpauth::extractors::basic::{BasicAuth, Config};
+/// use actori_web::{web, App};
+/// use actori_web_httpauth::extractors::basic::{BasicAuth, Config};
 ///
 /// async fn index(auth: BasicAuth) -> String {
 ///     format!("Hello, {}!", auth.user_id())
@@ -87,7 +87,7 @@ impl AuthExtractorConfig for Config {
 /// ```
 ///
 /// [`Config`]: ./struct.Config.html
-/// [app data]: https://docs.rs/actix-web/1.0.0-beta.5/actix_web/struct.App.html#method.data
+/// [app data]: https://docs.rs/actori-web/1.0.0-beta.5/actori_web/struct.App.html#method.data
 #[derive(Debug, Clone)]
 pub struct BasicAuth(Basic);
 

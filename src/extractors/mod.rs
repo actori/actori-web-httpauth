@@ -1,7 +1,7 @@
 //! Type-safe authentication information extractors
 
-use actix_web::dev::ServiceRequest;
-use actix_web::Error;
+use actori_web::dev::ServiceRequest;
+use actori_web::Error;
 use futures::future::Future;
 
 pub mod basic;
@@ -15,7 +15,7 @@ pub use self::errors::AuthenticationError;
 /// Trait implemented by types that can extract
 /// HTTP authentication scheme credentials from the request.
 ///
-/// It is very similar to actix' `FromRequest` trait,
+/// It is very similar to actori' `FromRequest` trait,
 /// except it operates with a `ServiceRequest` struct instead,
 /// therefore it can be used in the middlewares.
 ///
@@ -28,6 +28,6 @@ pub trait AuthExtractor: Sized {
     /// Future that resolves into extracted credentials type.
     type Future: Future<Output = Result<Self, Self::Error>>;
 
-    /// Parse the authentication credentials from the actix' `ServiceRequest`.
+    /// Parse the authentication credentials from the actori' `ServiceRequest`.
     fn from_service_request(req: &ServiceRequest) -> Self::Future;
 }

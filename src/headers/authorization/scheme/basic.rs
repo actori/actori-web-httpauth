@@ -2,7 +2,7 @@ use std::borrow::Cow;
 use std::fmt;
 use std::str;
 
-use actix_web::http::header::{
+use actori_web::http::header::{
     HeaderValue, IntoHeaderValue, InvalidHeaderValue,
 };
 use base64;
@@ -25,7 +25,7 @@ impl Basic {
     /// ## Example
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::authorization::Basic;
+    /// # use actori_web_httpauth::headers::authorization::Basic;
     /// let credentials = Basic::new("Alladin", Some("open sesame"));
     /// ```
     pub fn new<U, P>(user_id: U, password: Option<P>) -> Basic
@@ -130,7 +130,7 @@ impl IntoHeaderValue for Basic {
 #[cfg(test)]
 mod tests {
     use super::{Basic, Scheme};
-    use actix_web::http::header::{HeaderValue, IntoHeaderValue};
+    use actori_web::http::header::{HeaderValue, IntoHeaderValue};
 
     #[test]
     fn test_parse_header() {

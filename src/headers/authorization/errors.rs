@@ -3,7 +3,7 @@ use std::error::Error;
 use std::fmt;
 use std::str;
 
-use actix_web::http::header;
+use actori_web::http::header;
 
 /// Possible errors while parsing `Authorization` header.
 ///

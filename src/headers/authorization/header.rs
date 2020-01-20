@@ -1,10 +1,10 @@
 use std::fmt;
 
-use actix_web::error::ParseError;
-use actix_web::http::header::{
+use actori_web::error::ParseError;
+use actori_web::http::header::{
     Header, HeaderName, HeaderValue, IntoHeaderValue, AUTHORIZATION,
 };
-use actix_web::HttpMessage;
+use actori_web::HttpMessage;
 
 use crate::headers::authorization::scheme::Scheme;
 
@@ -22,9 +22,9 @@ use crate::headers::authorization::scheme::Scheme;
 /// # Example
 ///
 /// ```
-/// # use actix_web::http::header::Header;
-/// # use actix_web::{HttpRequest, Result};
-/// # use actix_web_httpauth::headers::authorization::{Authorization, Basic};
+/// # use actori_web::http::header::Header;
+/// # use actori_web::{HttpRequest, Result};
+/// # use actori_web_httpauth::headers::authorization::{Authorization, Basic};
 /// fn handler(req: HttpRequest) -> Result<String> {
 ///     let auth = Authorization::<Basic>::parse(&req)?;
 ///

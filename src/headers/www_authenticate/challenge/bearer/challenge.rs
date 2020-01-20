@@ -2,7 +2,7 @@ use std::borrow::Cow;
 use std::fmt;
 use std::str;
 
-use actix_web::http::header::{
+use actori_web::http::header::{
     HeaderValue, IntoHeaderValue, InvalidHeaderValue,
 };
 use bytes::{BufMut, Bytes, BytesMut};
@@ -17,11 +17,11 @@ use crate::utils;
 /// ## Example
 ///
 /// ```
-/// # use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer};
-/// use actix_web_httpauth::headers::www_authenticate::bearer::{
+/// # use actori_web::{web, App, HttpRequest, HttpResponse, HttpServer};
+/// use actori_web_httpauth::headers::www_authenticate::bearer::{
 ///     Bearer, Error,
 /// };
-/// use actix_web_httpauth::headers::www_authenticate::WwwAuthenticate;
+/// use actori_web_httpauth::headers::www_authenticate::WwwAuthenticate;
 ///
 /// fn index(_req: HttpRequest) -> HttpResponse {
 ///     let challenge = Bearer::build()
@@ -54,7 +54,7 @@ impl Bearer {
     /// ## Example
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::www_authenticate::bearer::{Bearer};
+    /// # use actori_web_httpauth::headers::www_authenticate::bearer::{Bearer};
     /// let challenge = Bearer::build()
     ///     .realm("Restricted area")
     ///     .scope("openid profile email")

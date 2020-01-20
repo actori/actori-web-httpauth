@@ -3,9 +3,9 @@
 use std::borrow::Cow;
 use std::default::Default;
 
-use actix_web::dev::{Payload, ServiceRequest};
-use actix_web::http::header::Header;
-use actix_web::{FromRequest, HttpRequest};
+use actori_web::dev::{Payload, ServiceRequest};
+use actori_web::http::header::Header;
+use actori_web::{FromRequest, HttpRequest};
 use futures::future;
 
 use super::config::AuthExtractorConfig;
@@ -61,7 +61,7 @@ impl AuthExtractorConfig for Config {
 /// # Example
 ///
 /// ```
-/// use actix_web_httpauth::extractors::bearer::BearerAuth;
+/// use actori_web_httpauth::extractors::bearer::BearerAuth;
 ///
 /// async fn index(auth: BearerAuth) -> String {
 ///     format!("Hello, user with token {}!", auth.token())
@@ -75,8 +75,8 @@ impl AuthExtractorConfig for Config {
 /// ## Example
 ///
 /// ```
-/// use actix_web::{web, App};
-/// use actix_web_httpauth::extractors::bearer::{BearerAuth, Config};
+/// use actori_web::{web, App};
+/// use actori_web_httpauth::extractors::bearer::{BearerAuth, Config};
 ///
 /// async fn index(auth: BearerAuth) -> String {
 ///     format!("Hello, {}!", auth.token())

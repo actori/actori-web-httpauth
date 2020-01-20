@@ -1,7 +1,7 @@
 use std::borrow::Cow;
 use std::fmt;
 
-use actix_web::http::header::{
+use actori_web::http::header::{
     HeaderValue, IntoHeaderValue, InvalidHeaderValue,
 };
 use bytes::{BufMut, BytesMut};
@@ -24,7 +24,7 @@ impl Bearer {
     /// ## Example
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::authorization::Bearer;
+    /// # use actori_web_httpauth::headers::authorization::Bearer;
     /// let credentials = Bearer::new("mF_9.B5f-4.1JqM");
     /// ```
     pub fn new<T>(token: T) -> Bearer
@@ -90,7 +90,7 @@ impl IntoHeaderValue for Bearer {
 #[cfg(test)]
 mod tests {
     use super::{Bearer, Scheme};
-    use actix_web::http::header::{HeaderValue, IntoHeaderValue};
+    use actori_web::http::header::{HeaderValue, IntoHeaderValue};
 
     #[test]
     fn test_parse_header() {

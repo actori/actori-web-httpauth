@@ -1,8 +1,8 @@
 use std::error::Error;
 use std::fmt;
 
-use actix_web::http::StatusCode;
-use actix_web::{HttpResponse, ResponseError};
+use actori_web::http::StatusCode;
+use actori_web::{HttpResponse, ResponseError};
 
 use crate::headers::www_authenticate::Challenge;
 use crate::headers::www_authenticate::WwwAuthenticate;

@@ -1,6 +1,6 @@
 use std::fmt;
 
-use actix_web::http::StatusCode;
+use actori_web::http::StatusCode;
 
 /// Bearer authorization error types, described in [RFC 6750](https://tools.ietf.org/html/rfc6750#section-3.1)
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Hash, Debug)]
@@ -23,7 +23,7 @@ pub enum Error {
 impl Error {
     /// Returns [HTTP status code] suitable for current error type.
     ///
-    /// [HTTP status code]: `actix_web::http::StatusCode`
+    /// [HTTP status code]: `actori_web::http::StatusCode`
     #[allow(clippy::trivially_copy_pass_by_ref)]
     pub fn status_code(&self) -> StatusCode {
         match self {
